@@ -5,7 +5,8 @@ body {
   padding: 0;
 }
 
-button {
+a.btn {
+  display: inline-block;
   background-color: black;
   border: none;
   border-radius: 8px;
