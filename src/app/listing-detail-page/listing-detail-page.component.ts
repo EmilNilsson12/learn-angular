@@ -15,6 +15,6 @@ export class ListingDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.listing = fakeListings.find((listing) => listing.id === id);
+    this.listing = fakeListings?.find((listing) => listing.id === id);
   }
 }
