@@ -9,6 +9,11 @@ import { NewListingPageComponent } from './new-listing-page/new-listing-page.com
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'listings',
+    pathMatch: 'full',
+  },
+  {
     path: 'listings',
     component: ListingsPageComponent,
     pathMatch: 'full',
