@@ -35,7 +35,7 @@ const routes: Routes = [
     component: MyListingsPageComponent,
   },
   {
-    path: 'new-listings',
+    path: 'new-listing',
     component: NewListingPageComponent,
   },
 ];
