@@ -9,17 +9,19 @@ export class AppComponent {
   // title = 'buy-sell';
   newMemberName = '';
   members: string[] = [];
+  errorMsg = '';
 
   onInput(value: string) {
     this.newMemberName = value;
   }
 
   addMember() {
-    console.log('Clicked event');
-    if (this.newMemberName !== '') {
-      this.members.push(this.newMemberName);
-      console.log(this.members);
-      this.newMemberName = '';
+    if (!this.newMemberName) {
+      this.errorMsg = "Name can't be empty!";
+      return;
     }
+    this.members.push(this.newMemberName);
+    this.newMemberName = '';
+    this.errorMsg = '';
   }
 }
