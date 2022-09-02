@@ -2,10 +2,7 @@
   <div class="ui card">
     <h1>Team generator</h1>
     <ul class="list">
-      <li>Title Nameson</li>
-      <li>Person Manson</li>
-      <li>Name Person</li>
-      <li>Name Nameson</li>
+      <li *ngFor="let member of members">{{ member }}</li>
     </ul>
     <div class="add-members-container">
       <input
