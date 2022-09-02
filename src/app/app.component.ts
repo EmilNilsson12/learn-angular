@@ -11,6 +11,7 @@ export class AppComponent {
   members: string[] = [];
   errorMsg = '';
   numberOfTeams: number | '' = '';
+  teams: string[][] = [[]];
 
   onAddMemberInput(value: string) {
     this.newMemberName = value;
@@ -18,6 +19,29 @@ export class AppComponent {
 
   onNumberOfTeamsInput(value: string) {
     this.numberOfTeams = Number(value);
+  }
+
+  generateTeams() {
+    if (!this.numberOfTeams || this.numberOfTeams <= 0) return;
+
+    const allMembers = [...this.members];
+
+    while (allMembers.length) {
+      for (let i = 0; i < this.numberOfTeams; i++) {
+        const randomIndex = Math.floor(Math.random() * allMembers.length);
+        const member = allMembers.splice(randomIndex, 1)[0];
+
+        if (!member) continue;
+
+        if (this.teams[i]) {
+          this.teams[i].push(member);
+        } else {
+          this.teams[i] = [member];
+        }
+      }
+    }
+    console.log(this.teams);
+
   }
 
   addMember() {
