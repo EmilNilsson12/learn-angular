@@ -23,18 +23,16 @@
         (input)="onNumberOfTeamsInput(numberOfTeamsInput.value)"
         min="1"
       />
-      <button
-      (click)="generateTeams()"
-      >Generate</button>
+      <button (click)="generateTeams()">Generate</button>
     </div>
     <p class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</p>
   </div>
   <div class="teams-container" *ngIf="teams[0].length">
-    <div class="team-container" *ngFor="let team of teams; let i = index">
-      <h3>Team {{ i + 1 }}</h3>
-      <ul>
-        <li *ngFor="let member of team">{{ member }}</li>
-      </ul>
-    </div>
+    <app-team
+      *ngFor="let team of teams; let i = index"
+      [team]="team"
+      [index]="i"
+    >
+    </app-team>
   </div>
 </div>
